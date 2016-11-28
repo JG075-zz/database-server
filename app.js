@@ -1,14 +1,13 @@
 var express = require('express');
 var fs = require('fs');
+var cache = require('memory-cache');
 
 var app = express();
 
 var KeyManager = require('./models/keyManager').KeyManager;
 var keyManager = new KeyManager();
 
-app.use(express.cookieParser('S3CRE7'));
-app.use(express.session());
-app.use(app.router);
+cache.put('keyManager', keyManager);
 
 // dynamically include routes (Controller)
 fs.readdirSync('./controllers').forEach(function (file) {
@@ -19,6 +18,10 @@ fs.readdirSync('./controllers').forEach(function (file) {
 });
 
 app.get('/', function (req, res) {
+  res.send('Hello world!');
+});
+
+app.get('/dog', function (req, res) {
   res.send('Hello world!');
 });
 

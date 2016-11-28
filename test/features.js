@@ -25,17 +25,18 @@ describe("App", function() {
     });
   });
 
-  it("should visit the get route", function(next) {
-    browser.visit("http://localhost:3000/set", function(err) {
+  it("should store the set parameters", function(next) {
+    browser.visit("http://localhost:3000/set?foo=bar", function(err) {
       assert.ok(browser.success);
+      assert.equal(keyManager.items.foo, 'bar');
       next();
     });
   });
 
-  it("should store the set parameters", function(next) {
-    browser.visit("http://localhost:3000/set?foo=bar", function(err) {
+  it("should return existing set parameters", function(next) {
+    browser.visit("http://localhost:3000/get?key=foo", function(err) {
       assert.ok(browser.success);
-      assert.equal(keyManager.items['foo'], 'bar');
+      browser.assert.text('body', 'bar');
       next();
     });
   });
