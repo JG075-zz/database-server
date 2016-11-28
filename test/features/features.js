@@ -1,11 +1,3 @@
-var assert = require('assert');
-var Browser = require('zombie');
-var url = "http://localhost:3000";
-var browser = new Browser();
-
-var http = require('http');
-var app = require('../server');
-
 describe("App", function() {
 
   before(function() {
@@ -19,7 +11,7 @@ describe("App", function() {
   });
 
   it("should visit the site", function(next) {
-    browser.visit(url, function(err) {
+    browser.visit("http://localhost:3000", function(err) {
       assert.ok(browser.success);
       next();
     });

@@ -1,5 +1,5 @@
 var assert = require('assert');
-var KeyManager = require('../models/keyManager').KeyManager;
+var KeyManager = require('../../models/keyManager').KeyManager;
 
 describe('keyManager', function() {
 
