@@ -1,4 +1,5 @@
 var app = require('./app');
+
 // app is a callback function or an express application
 module.exports = app;
 if (!module.parent) {
