@@ -2,7 +2,7 @@
 
 An app that allows you to store key-value pairs and then retrieve the value using the key.
 
-## Structure
+## Structure
 
 The program is split into an MVC format. There are no views as the response was simply passed in from the controller. Key-value pairs are stored in the keyManager model.
 
