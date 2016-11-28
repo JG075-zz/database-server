@@ -1,0 +1,11 @@
+{
+  "name": "database-server",
+  "version": "1.0.0",
+  "description": "A server to set and get key-value pairs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "James Gardiner",
+  "license": "ISC"
+}
