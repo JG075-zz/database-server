@@ -2,10 +2,16 @@
   "name": "database-server",
   "version": "1.0.0",
   "description": "A server to set and get key-value pairs",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "mocha"
   },
   "author": "James Gardiner",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "zombie": "^5.0.5"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
