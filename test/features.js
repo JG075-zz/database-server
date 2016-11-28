@@ -32,6 +32,14 @@ describe("App", function() {
     });
   });
 
+  it("should store the set parameters", function(next) {
+    browser.visit("http://localhost:3000/set?foo=bar", function(err) {
+      assert.ok(browser.success);
+      assert.equal(keyManager.items['foo'], 'bar');
+      next();
+    });
+  });
+
   after(function(done) {
       this.server.close(done);
     });

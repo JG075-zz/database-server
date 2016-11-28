@@ -3,6 +3,13 @@ var fs = require('fs');
 
 var app = express();
 
+var KeyManager = require('./models/keyManager').KeyManager;
+var keyManager = new KeyManager();
+
+app.use(express.cookieParser('S3CRE7'));
+app.use(express.session());
+app.use(app.router);
+
 // dynamically include routes (Controller)
 fs.readdirSync('./controllers').forEach(function (file) {
   if(file.substr(-3) == '.js') {
