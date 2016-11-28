@@ -18,11 +18,7 @@ fs.readdirSync('./controllers').forEach(function (file) {
 });
 
 app.get('/', function (req, res) {
-  res.send('Hello world!');
-});
-
-app.get('/dog', function (req, res) {
-  res.send('Hello world!');
+  res.end();
 });
 
 app.listen(4000, function() {
